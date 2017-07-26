@@ -1,7 +1,7 @@
 from werkzeug.serving import run_simple
 
 
-class Melon:
+class AppleMelon:
     def __init__(self):
         pass
 

@@ -17,17 +17,3 @@ class HTTPViews(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def delete(self):
         pass
-
-
-class UserViews(HTTPViews):
-    def patch(self):
-        pass
-
-    def post(self):
-        pass
-
-    def delete(self):
-        pass
-
-    def get(self):
-        return 'hello'

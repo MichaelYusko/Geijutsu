@@ -1,7 +1,7 @@
-from applemelon.serving import _run_server
+from geijutsu.serving import _run_server
 
 
-class Melon:
+class Geijutsu:
     """
     Main class
     """

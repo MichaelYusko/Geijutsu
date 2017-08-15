@@ -36,8 +36,6 @@ class Str(Field):
         for key, value in data.items():
             if len(value) >= self.__dict__['max_length']:
                 data[key] = [self.errors['max_length']]
-            if not type(value) == str:
-                data[key] = ['Filed must be a string']
         return data
 
 
@@ -58,3 +56,5 @@ class BaseSchema:
         value = cls.__dict__['properties']
         k = value['name']
         print(k.validate(args[0]))
+
+print(BaseSchema.__doc__)

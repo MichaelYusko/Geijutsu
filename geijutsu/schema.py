@@ -56,5 +56,3 @@ class BaseSchema:
         value = cls.__dict__['properties']
         k = value['name']
         print(k.validate(args[0]))
-
-print(BaseSchema.__doc__)

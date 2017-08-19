@@ -25,17 +25,25 @@ class Str(Field):
     # TODO add custom errors into an array
     # TODO refactor the class;)
 
-    def __init__(self, max_length=None):
+    def __init__(self, max_length=None, min_length=None):
         self.max_length = max_length
+        self.min_length = min_length
 
     errors = {
-        'max_length': 'Must have no more than'
+        'max_length': 'max_len',
+        'min_length': 'min_len'
     }
 
     def validate(self, data):
         for key, value in data.items():
+            errors = []
             if len(value) >= self.__dict__['max_length']:
-                data[key] = [self.errors['max_length']]
+                errors.append(self.errors['max_length'])
+                data[key] = errors
+
+            if len(value) <= self.__dict__['min_length']:
+                errors.append(self.errors['min_length'])
+                data[key] = errors
         return data
 
 
